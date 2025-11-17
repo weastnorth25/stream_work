@@ -1,5 +1,5 @@
 import pandas as pd
-import streamlit
+import streamlit as st
 import requests
 
 
@@ -22,4 +22,5 @@ st.subheader(f"📍 {location['locationName']} 36 小時預報")
 for element in location["weatherElement"]:
         name = element["elementName"]
         value = element["time"][0]["parameter"][0]["parameterName"]
+
         st.write(f"**{name}**: {value}")
